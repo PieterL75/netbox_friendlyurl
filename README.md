@@ -7,6 +7,7 @@ format:
 * https://netbox/applabel/modelname/primairykey=value/
 * https://netbox/applabel/modelname/primairykey=value/key=value/
 * https://netbox/applabel/modelname/primairykey=value/key=value/key=value/ (as many as needed)
+
 If no unique object is found with those values, then you get redirected to the search enginge, with the primairykey value to be searched for.
 If you reger to related objects in the second keys, then you need to used the 'id' and not the name of the object.
 
