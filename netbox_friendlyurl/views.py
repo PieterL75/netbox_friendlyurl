@@ -33,4 +33,5 @@ def RedirectView(request, **kwargs):
 
     searchvalue=list(modelsearchdata.values())[0]
 
-    return redirect(f"/search/?lookup=icontains&obj_types={applabel}.{modelname}&q={searchvalue}")
+    # return redirect(f"/search/?lookup=icontains&obj_types={applabel}.{modelname}&q={searchvalue}")  #icontains is a valid lookup value, but not accepted ?
+    return redirect(f"/search/?obj_types={applabel}.{modelname}&q={searchvalue}")
