@@ -31,8 +31,6 @@ def RedirectView(request, **kwargs):
     if len(furl_objects) == 1:
         return redirect(furl_objects[0].get_absolute_url())
 
-    searchvalue=f"{'|'.join([re.escape(v) for k,v in modelsearchdata.items()])}"
-    if len(modelsearchdata)>1:
-        searchvalue=f"({searchvalue})"
+    searchvalue=list(modelsearchdata.values())[0]
 
-    return redirect(f"/search/?lookup=iregex&obj_types={applabel}.{modelname}&q={searchvalue}")
+    return redirect(f"/search/?lookup=icontains&obj_types={applabel}.{modelname}&q={searchvalue}")
