@@ -63,11 +63,15 @@ def RedirectView(request, **kwargs):
         if fieldtype == 'ForeignKey':
             fieldtype=furl_model._meta.get_field(datakey).target_field.get_internal_type()
             if (fieldtype in django_numberfields) and not isinstance(datavalue,Number):
-                resolveddatavalue=furl_model._meta.get_field(datakey).remote_field.model.objects.filter(Q(name=datavalue))
-                if len(resolveddatavalue) == 1:
-                    datavalue=resolveddatavalue[0].id
+                try:
+                    resolveddatavalue=furl_model._meta.get_field(datakey).remote_field.model.objects.filter(Q(name=datavalue))
+                    if len(resolveddatavalue) == 1:
+                        datavalue=resolveddatavalue[0].id
+                except:
+                    datavalue=''
 
-        modelsearchdata[datakey]=datavalue
+        if datavalue:
+            modelsearchdata[datakey]=datavalue
 
     furl_objects = furl_model.objects.filter( **modelsearchdata)
 
