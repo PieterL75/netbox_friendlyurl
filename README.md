@@ -3,7 +3,7 @@ Create user-friendly url's for standard netbox/model/type/pk/ format
 
 Install in the most common ways.
 
-The links are build as 'search' parameters, relative to the model. The first parameter has to be the primariy field of the model (name, vid, address, ...)
+The links are build as 'search' parameters, relative to the model. The first parameter has to be the primary field of the model (name, vid, address, ...)
 All values are searched for with case insensitive 'starts with'
 
 format: 
