@@ -1,10 +1,5 @@
-from django.conf import settings
 from django.shortcuts import redirect
 from django.urls import reverse
-
-# from dcim.models import Device
-
-plugin_settings = settings.PLUGINS_CONFIG.get("netbox_friendlyurl", {})
 
 class FURLRedirectMiddleware:
 

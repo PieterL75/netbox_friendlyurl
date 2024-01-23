@@ -3,7 +3,6 @@ from django.apps import apps
 from django.db.models import Q
 from django.shortcuts import redirect
 from django.urls import resolve
-import re
 from numbers import Number
 
 def RedirectView(request, **kwargs):
