@@ -11,9 +11,9 @@ format:
 * https://netbox/applabel/modelname/primairykey=value|key=value/
 * https://netbox/applabel/modelname/primairykey=value|key=value|key=value/ (as many as needed)
 
-If you refer to related objects in the second keys, then you can either use the 'id' of the object, or you can use the 'name'. Thne 'name' has to be the exact (case insensitive) value, there is no 'starts with' or 'contains' filter.
 Use a | (pipe) as separator between the key=value pairs.
-If an ID is expected, but a text is found, then an exact name lookup is performed to find the correct ID. If that fails, then the pair is removed from the searchparameters
+If you refer to related objects in the second keys, then you can either use the 'id' of the object, or you can use the 'name'. 
+If an ID is expected, but a text is found, then an case insenitive exact lookup for the 'name' field is performed to find the correct ID. If that fails, then the pair is removed from the searchparameters
 
 Examples:
 * Link to VLAN with ID 3000: https://netbox/ipam/vlan/vid=3000/
